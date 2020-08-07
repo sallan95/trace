@@ -1,5 +1,6 @@
 package com.rubix.trace.Entities;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,20 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "risk")
-public class Risk {
+@Table(name = "Interaction")
+public class Interaction {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private int risk_score;
+    private Integer person_id;
+    private Integer event_id;
     
     @Override
     public String toString() {
-        return "User{" +
-                ", name='" + name + '\'' +
-                ", Risk_score=" + risk_score +
+        return "Household{" +
+                ", person_id='" + person_id + '\'' +
+                ", event_id=" + event_id +
                 '}';
     }
 
@@ -32,20 +33,21 @@ public class Risk {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getPerson_id() {
+		return person_id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setPerson_id(Integer person_id) {
+		this.person_id = person_id;
 	}
 
-	public int getRiskScore() {
-		return risk_score;
+	public Integer getEvent_id() {
+		return event_id;
 	}
 
-	public void setRiskScore(int riskScore) {
-		this.risk_score = riskScore;
+	public void setEvent_id(Integer event_id) {
+		this.event_id = event_id;
 	}
+
     
 }
